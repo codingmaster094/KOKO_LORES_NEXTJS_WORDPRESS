@@ -995,10 +995,10 @@ header .logo {
 
 
 /* loader css */
-:root {
+/* :root {
   --page-bg: honeydew;
   --loader-bar-bg: #FF7276;
-  --loader-bar-width: 0.3vmin; /* Adjust this for the narrow bar */
+  --loader-bar-width: 0.3vmin; 
 }
 
 .loader_body {
@@ -1009,8 +1009,8 @@ header .logo {
 
 .loader {
   position: relative;
-  width: 8vmin; /* Narrower loader width */
-  aspect-ratio: 1; /* Maintain a square aspect ratio */
+  width: 8vmin; 
+  aspect-ratio: 1; 
   background: conic-gradient(
     transparent,
     transparent 12%,
@@ -1037,7 +1037,7 @@ header .logo {
     var(--loader-bar-bg) 50%,
     transparent 50%
   );
-  width: var(--loader-bar-width); /* Adjust this for the narrow bar */
+  width: var(--loader-bar-width); 
   aspect-ratio: 1;
 }
 
@@ -1050,32 +1050,71 @@ header .logo {
   to {
     transform: rotate(1turn);
   }
+} */
+
+
+
+/*--------------------------------------------------------------
+    18. Loader
+--------------------------------------------------------------*/
+.loader_body {
+  display: flex;
+  height: 100vh;
+  background: rgba(255, 114, 118, 0.1);
 }
 
-
-/* Loader Css  */
-
-
-.loader::before {
+.loader {
+  position: fixed;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  background: linear-gradient(
-    to left,
-    var(--loader-bar-bg) 50%,
-    transparent 50%
-  );
-  width: var(--loader-bar-width);
-  aspect-ratio: 1;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  background-color: var(--white);
+  z-index: 999;
 }
 
-.loader::after {
-  inset: var(--loader-bar-width);
-  background: var(--page-bg);
+.loader:before{
+  content: "";
+  position: fixed;
+  top: calc(50% - 50px);
+  left: calc(50% - 50px);
+  border: 2px solid var(--primary);
+  background-image: url('../public/img/loader-logo.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-top-color: transparent;
+  width: 100px;
+  height: 100px;
+  -webkit-animation: animate-preloader 1.5s linear infinite;
+  animation: animate-preloader 1.5s linear infinite;
+}
+.loader.table-loader{
+  position: absolute;
+  border-radius: .625rem;
+  height: calc(100vh - 227px);
+}
+.loader.table-loader:after,
+.loader.table-loader:before{
+  position: absolute;
+}
+@-webkit-keyframes animate-preloader {
+  0% {
+      transform: rotate(0deg);
+  }
+
+  100% {
+      transform: rotate(360deg);
+  }
 }
 
-@keyframes spin {
-  to {
-    transform: rotate(1turn);
+@keyframes animate-preloader {
+  0% {
+      transform: rotate(0deg);
+  }
+
+  100% {
+      transform: rotate(360deg);
   }
 }
