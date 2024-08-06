@@ -823,7 +823,6 @@ header .logo {
 }
 
 @media(max-width:639px) {
-
   h1,
   .menu-head p {
       font-size: 46px !important;
@@ -1060,7 +1059,7 @@ header .logo {
 .loader_body {
   display: flex;
   height: 100vh;
-  background: rgba(255, 114, 118, 0.1);
+  background: rgba(245, 198, 199, 0.102)
 }
 
 .loader {
@@ -1078,7 +1077,7 @@ header .logo {
   content: "";
   position: fixed;
   top: calc(50% - 50px);
-  left: calc(50% - 50px);
+  left: calc(50% - 40px);
   border: 2px solid var(--primary);
   background-image: url('../public/img/loader-logo.png');
   background-size: cover;
