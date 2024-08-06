@@ -994,20 +994,88 @@ header .logo {
 }
 
 
-/* Loader Css  */
-
-#preloader {
-	display: none;
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	height: 10px;
-	z-index: 9999;
+/* loader css */
+:root {
+  --page-bg: honeydew;
+  --loader-bar-bg: #FF7276;
+  --loader-bar-width: 0.3vmin; /* Adjust this for the narrow bar */
 }
 
-#preloader div {
-	width: 10%;
-	height: 100%;
-	background-color: #FF7276;
+.loader_body {
+  display: flex;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.loader {
+  position: relative;
+  width: 8vmin; /* Narrower loader width */
+  aspect-ratio: 1; /* Maintain a square aspect ratio */
+  background: conic-gradient(
+    transparent,
+    transparent 12%,
+    var(--loader-bar-bg)
+  );
+  border-radius: 50%;
+  margin: auto;
+  animation: spin 1.1s linear infinite;
+}
+
+.loader::before,
+.loader::after {
+  content: "";
+  position: absolute;
+  border-radius: inherit;
+}
+
+.loader::before {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(
+    to left,
+    var(--loader-bar-bg) 50%,
+    transparent 50%
+  );
+  width: var(--loader-bar-width); /* Adjust this for the narrow bar */
+  aspect-ratio: 1;
+}
+
+.loader::after {
+  inset: var(--loader-bar-width);
+  background: rgba(0, 0, 0, 0.1) !important;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+
+/* Loader Css  */
+
+
+.loader::before {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(
+    to left,
+    var(--loader-bar-bg) 50%,
+    transparent 50%
+  );
+  width: var(--loader-bar-width);
+  aspect-ratio: 1;
+}
+
+.loader::after {
+  inset: var(--loader-bar-width);
+  background: var(--page-bg);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(1turn);
+  }
 }

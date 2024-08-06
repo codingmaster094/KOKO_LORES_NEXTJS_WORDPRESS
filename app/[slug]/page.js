@@ -16,7 +16,6 @@ const Page = ({ params }) => {
   const [data, setData] = useState(null);
   const [contactData, setContactData] = useState(null);
   const [pageContent, setPageContent] = useState(null);
-  const [error, setError] = useState(null); // Added error state
 
   useEffect(() => {
     const fetchData = async () => {
@@ -35,7 +34,6 @@ const Page = ({ params }) => {
         setContactData(contactData);
       } catch (error) {
         console.error('Error fetching data:', error);
-        setError('Error fetching data. Please try again later.');
       }
     };
 
@@ -43,14 +41,6 @@ const Page = ({ params }) => {
   }, [params.slug]);
 
   // Render error message if there's an error
-  if (error) {
-    return <div>{error}</div>;
-  }
-
-  // Render nothing until data and contactData are loaded
-  // if (!data && !pageContent) {
-  //   return <h2>Loadding...</h2>;
-  // }
 
   if (!data && !pageContent) {
     return <Loader/>;
@@ -66,7 +56,7 @@ const Page = ({ params }) => {
 
   return (
     <>
-      <Header />
+    <Header/>
       {data ? (
         <>
           {heroSectionData && <MainHerosection initialContent={heroSectionData} />}
@@ -79,8 +69,8 @@ const Page = ({ params }) => {
       ) : (
         <PageContent initialContent={pageContent} />
       )}
-      <Footer />
-    </>
+      <Footer/>
+      </>
   );
 };
 

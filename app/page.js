@@ -11,6 +11,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Loader from "./components/Loader";
 
+
 export const WORDPRESS_URL = process.env.NEXT_PUBLIC_API_URL;
 
 export default function Home() {
@@ -70,14 +71,14 @@ export default function Home() {
   }, []);
 
 
+
   if (!homeHero && !homeAboutUs  && !homeSlider && !homeKontaktUs && !homeNewsletter) {
     return <Loader/>;
   }
 
   return (
     <>
-      <Header />
-      <main>
+    <Header/>
         {homeHero && (
           <section className="hero-banner bg-color">
             <div className="hero-banner-wrapper flex-col lg:flex-row">
@@ -344,8 +345,7 @@ export default function Home() {
           </div>
         </section>
         )}
-      </main>
-      <Footer />
+        <Footer/>
     </>
   );
 }
