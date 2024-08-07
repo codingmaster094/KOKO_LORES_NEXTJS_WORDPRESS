@@ -70,8 +70,6 @@ export default function Home() {
     conatctDetail()
   }, []);
 
-
-
   if (!homeHero && !homeAboutUs  && !homeSlider && !homeKontaktUs && !homeNewsletter) {
     return <Loader/>;
   }
