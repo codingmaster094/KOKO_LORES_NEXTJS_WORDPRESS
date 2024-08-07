@@ -1,7 +1,5 @@
 'use client';
 import React, { useEffect, useState } from 'react';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
 import MainHerosection from '../components/MainHerosection';
 import MainSliderSection from '../components/MainSliderSection';
 import MainContactSection from '../components/MainContactSection';
@@ -11,6 +9,7 @@ import Main_service_Post from '../components/Main_service_Post';
 import { AllData, conatctDetail, generateMetadata } from '../serverComponent/AllData';
 import PageContent from '../components/PageContent';
 import Loader from '../components/Loader';
+import Layout from '../components/Layout';
 
 
 const Page = ({ params }) => {
@@ -60,8 +59,7 @@ const Page = ({ params }) => {
   const newsletterSectionData = data?.find(item => item.acf_fc_layout === 'home_newsletter');
 
   return (
-    <>
-    <Header/>
+    <Layout>
       {data ? (
         <>
           {heroSectionData && <MainHerosection initialContent={heroSectionData} />}
@@ -74,8 +72,7 @@ const Page = ({ params }) => {
       ) : (
         <PageContent initialContent={pageContent} />
       )}
-      <Footer/>
-      </>
+      </Layout>
   );
 };
 

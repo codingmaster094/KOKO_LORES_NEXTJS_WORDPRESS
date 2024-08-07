@@ -58,9 +58,17 @@ function MainAboutsection({ initialContent }) {
                         />
                         <div className="sub-about-img flex sm:gap-8 gap-4 w-full">
                         {
-                            content.service_about_us_section_images.map((img, i)=> (
-                            <Image src={img.url} alt={img.alt} width={500} height={300} layout="responsive" objectFit="cover" className="w-1/2" key={i}/>
-                            ))
+                        content.service_about_us_section_images.map((img, i) => (
+                            <Image
+                            src={img.url}
+                            alt={img.alt}
+                            width={0}
+                            height={0}
+                            sizes="100vw"
+                            style={{ width: '50%', height: 'auto' }}
+                            key={i}
+                            />
+                        ))
                         }
                         </div>
                     </div>

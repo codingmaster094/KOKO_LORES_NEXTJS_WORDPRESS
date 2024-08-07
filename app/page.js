@@ -1,8 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
 import Link from 'next/link';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
@@ -11,6 +9,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Loader from "./components/Loader";
 import Image from "next/image";
+import Layout from "./components/Layout";
 
 
 export const WORDPRESS_URL = process.env.NEXT_PUBLIC_API_URL;
@@ -77,7 +76,7 @@ export default function Home() {
 
   return (
     <>
-    <Header/>
+    <Layout>
         {homeHero && (
           <section className="hero-banner bg-color">
             <div className="hero-banner-wrapper flex-col lg:flex-row">
@@ -365,7 +364,7 @@ export default function Home() {
           </div>
         </section>
         )}
-        <Footer/>
+    </Layout>
     </>
   );
 }
