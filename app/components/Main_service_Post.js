@@ -4,7 +4,6 @@ import React from "react";
 
 function Main_service_Post({ initialContent }) {
   const content = initialContent;
-  console.log('content', content)
   return (
     <section className="brunch-post event-post">
       {content?.service_post_lists_repeater?.length > 0 &&
