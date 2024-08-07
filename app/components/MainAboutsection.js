@@ -33,8 +33,10 @@ function MainAboutsection({ initialContent }) {
                                     <Image
                                         src={eventBox.service_about_us_section_addition_event_logos.url}
                                         alt={eventBox.service_about_us_section_addition_event_logos.alt}
-                                        layout="fill"
-                                        objectFit="cover"
+                                        width={0}
+                                        height={0}
+                                        sizes="100vw"
+                                        style={{ width: '100%', height: 'auto' }}
                                         />
                                     </div>
                                     <div className="event-text">
