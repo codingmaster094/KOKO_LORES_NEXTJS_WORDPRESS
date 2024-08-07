@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { useParams } from "next/navigation";
 import axios from "axios";
 import { WORDPRESS_URL } from "../page";
+import Image from "next/image";
 
  function Header() {
   const {slug} = useParams();
@@ -72,9 +73,14 @@ import { WORDPRESS_URL } from "../page";
             <div className="logo">
               <Link href="/">
               {Header_menu && (
-                <img 
+                <Image
                 src={BG_Header == "dark"  ? Header_menu.header_dark_logo.url : Header_menu.header_light_logo.url} 
-                alt={BG_Header == "light" ? Header_menu.header_dark_logo.alt :Header_menu.header_light_logo.alt} />
+                alt={BG_Header == "light" ? Header_menu.header_dark_logo.alt :Header_menu.header_light_logo.alt}
+                width={0}
+                height={0}
+                sizes="100vw"
+                style={{ width: '100%', height: 'auto' }}
+              />
               )}
               </Link>
             </div>
@@ -117,7 +123,14 @@ import { WORDPRESS_URL } from "../page";
             <div className="open-menu-logo flex items-start gap-8 pb-14">
               <div className="logo">
               {Header_menu && Header_menu.header_light_logo && (
-                <img src={Header_menu.header_light_logo.url} alt={Header_menu.header_light_logo.alt} />
+                <Image
+                src={Header_menu.header_light_logo.url}
+                alt={Header_menu.header_light_logo.alt}
+                width={0}
+                height={0}
+                sizes="100vw"
+                style={{ width: '100%', height: 'auto' }}
+              />
               )}
               </div>
               {Header_menu && (

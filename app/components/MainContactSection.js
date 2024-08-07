@@ -1,6 +1,7 @@
 // MainContactSection.js
 import React from 'react';
 import Link from 'next/link'; // Assuming you're using Next.js
+import Image from 'next/image';
 
 const MainContactSection = ({ initialContent, contactdata }) => {
   // Set default values for content and contactdetails
@@ -78,7 +79,14 @@ const MainContactSection = ({ initialContent, contactdata }) => {
             target="_blank"
             href={content.home_kontakt_us_image?.link || '#'}
           >
-            <img src={content.home_kontakt_us_image?.url || '/default-image.jpg'} alt={content.home_kontakt_us_image?.alt || 'Default Alt'} />
+           <Image
+           src={content.home_kontakt_us_image?.url || '/default-image.jpg'}
+           alt={content.home_kontakt_us_image?.alt || 'Default Alt'}
+           width={0}
+           height={0}
+           sizes="100vw"
+           style={{ width: '100%', height: 'auto' }}
+          />
           </Link>
         </div>
       </div>

@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react'
 
@@ -29,7 +30,12 @@ function MainAboutsection({ initialContent }) {
                                 content.service_about_us_section_addition_event_logo.map((eventBox , i) => (
                                     <div className="event-box flex flex-col gap-3 text-center" key={i}>
                                     <div className="event-img">
-                                        <img src={eventBox.service_about_us_section_addition_event_logos.url} alt={eventBox.service_about_us_section_addition_event_logos.alt}/>
+                                    <Image
+                                        src={eventBox.service_about_us_section_addition_event_logos.url}
+                                        alt={eventBox.service_about_us_section_addition_event_logos.alt}
+                                        layout="fill"
+                                        objectFit="cover"
+                                        />
                                     </div>
                                     <div className="event-text">
                                         <p dangerouslySetInnerHTML={{ __html:eventBox.service_about_us_section_addition_event_logo_title }}></p>
@@ -41,11 +47,17 @@ function MainAboutsection({ initialContent }) {
                         }
                     </div>
                     <div className="brunch-about-img w-full lg:w-1/2 flex flex-wrap sm:gap-8 gap-4">
-                        <img src={content.service_about_us_section_image.url} alt={content.service_about_us_section_image.alt} className="w-full"/>
+                    <Image
+                       src={content.service_about_us_section_image.url}
+                       alt={content.service_about_us_section_image.alt}
+                        layout="responsive"
+                       objectFit="cover"
+                       width={500} height={300}
+                        />
                         <div className="sub-about-img flex sm:gap-8 gap-4 w-full">
                         {
                             content.service_about_us_section_images.map((img, i)=> (
-                                <img src={img.url} alt={img.alt} className="w-1/2" key={i}/>
+                            <Image src={img.url} alt={img.alt} width={500} height={300} layout="responsive" objectFit="cover" className="w-1/2" key={i}/>
                             ))
                         }
                         </div>

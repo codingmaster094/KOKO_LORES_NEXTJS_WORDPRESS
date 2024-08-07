@@ -1,6 +1,7 @@
 
 import React from "react";
 import Link from "next/link"; 
+import Image from "next/image";
 
 const MainHerosection = ({ initialContent }) => {
   const content = initialContent;
@@ -31,7 +32,12 @@ const MainHerosection = ({ initialContent }) => {
             <p className="text-white" dangerouslySetInnerHTML={{ __html: content.service_hero_section_sticky_note }}/>
           </div>
           <div className="sub-banner banner-slide-box h-full relative">
-            <img src={content.service_hero_section_image.url} alt="hero-banner" />
+          <Image
+            src={content.service_hero_section_image.url}
+            alt="hero-banner"
+            layout="fill"
+            objectFit="cover"
+          />
             <p>{content.service_hero_section_images_title}</p>
           </div>
         </div>

@@ -71,6 +71,7 @@ export default function Home() {
   }, []);
 
 
+
   if (!homeHero && !homeAboutUs  && !homeSlider && !homeKontaktUs && !homeNewsletter) {
     return <Loader/>;
   }

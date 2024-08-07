@@ -5,6 +5,7 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import Image from 'next/image';
 
 function SliderSection({ initialContent }) {
   const content = initialContent;
@@ -25,7 +26,14 @@ function SliderSection({ initialContent }) {
                 <div className="slide-box relative">
                 {
                   <>
-                  <img src={image.home_silder_image.url} alt={image.home_silder_image.alt} className='block h-full w-full object-cover' />
+                  <Image 
+                    src={image.home_silder_image.url} 
+                    alt={image.home_silder_image.alt} 
+                    width={0}
+                    height={0}
+                    sizes="100vw"
+                    style={{ width: '100%', height: 'auto' }}
+                  />
                   <p className="">{image.home_slider_title}</p>
                   </>
                 }

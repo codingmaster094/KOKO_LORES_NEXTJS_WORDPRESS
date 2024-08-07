@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -28,7 +29,12 @@ function Main_service_Post({ initialContent }) {
           >
             <div className={`brunch-post-img w-full lg:w-1/2 ${imgPositionClass}`}>
               <div className="sub-banner banner-slide-box h-full relative">
-                <img src="img/brunch-post-1.jfif" alt="hero-banner" />
+                <Image
+                  src={items.services_post_lists_image.url}
+                  alt={items.services_post_lists_image.alt}
+                  layout="fill"
+                  objectFit="cover"
+              />
                 <p>{items.services_post_lists_image_label}</p>
               </div>
             </div>

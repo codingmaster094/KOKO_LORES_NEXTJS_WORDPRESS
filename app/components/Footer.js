@@ -3,6 +3,7 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { WORDPRESS_URL } from "../page";
 import axios from "axios";
+import Image from "next/image";
 
 function Footer() {
   const [Footer_menu, setFooter_menu] = useState(null);
@@ -41,7 +42,14 @@ function Footer() {
             <Link href="/">
             {
               Footer_menu && 
-                <img src={Footer_menu.footer_logo.url} alt={Footer_menu.footer_logo.alt} />
+              <Image
+                src={Footer_menu.footer_logo.url}
+                alt={Footer_menu.footer_logo.alt}
+                width={0}
+                height={0}
+                sizes="100vw"
+                style={{ width: '100%', height: 'auto' }}
+              />
             }
               </Link>
             </div>
@@ -119,7 +127,7 @@ function Footer() {
               Rechtliches_Footer_Menu && 
               Rechtliches_Footer_Menu.map((items , i) => (
               <li key={i}>
-              <Link href={items.slug}  >{items.title}</Link>
+              <Link href={items.path}  >{items.title}</Link>
               </li>
               ))
             }
