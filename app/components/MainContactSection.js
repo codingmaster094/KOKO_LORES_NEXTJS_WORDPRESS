@@ -75,9 +75,12 @@ const MainContactSection = ({ initialContent, contactdata }) => {
           </div>
         </div>
         <div className="contact-map lg:w-1/2">
+        {
+          console.log("content" , content)
+        }
           <Link
             target="_blank"
-            href={content.home_kontakt_us_image?.link || '#'}
+            href={content.home_kontakt_us_map_link}
           >
            <Image
            src={content.home_kontakt_us_image?.url || '/default-image.jpg'}

@@ -5,7 +5,6 @@ const Loader = () => {
     <div className="loader_body">
     <div class="loader"></div>
     </div>
-
     </>
   );
 };

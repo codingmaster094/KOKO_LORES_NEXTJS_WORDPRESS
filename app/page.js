@@ -10,6 +10,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Loader from "./components/Loader";
+import Image from "next/image";
 
 
 export const WORDPRESS_URL = process.env.NEXT_PUBLIC_API_URL;
@@ -114,10 +115,14 @@ export default function Home() {
                       className="banner-slide-box relative w-full"
                       key={index}
                     >
-                      <img
-                        src={image.home_hero_section_image.url}
-                        alt="hero-banner"
-                      />
+                     <Image
+                       src={image.home_hero_section_image.url}
+                      alt={image.home_hero_section_image.alt}
+                      width={0}
+                      height={0}
+                      sizes="100vw"
+                      style={{ width: '100%', height: 'auto' }}
+                    />
                       <p>{image.home_hero_section_images_title}</p>
                     </div>
                   );
@@ -154,7 +159,14 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="about-text-map lg:w-1/2 mx-auto lg:mx-0">
-                  <img src={homeAboutUs.about_us_image.url} alt="" />
+                <Image
+                  src={homeAboutUs.about_us_image.url}
+                  alt={homeAboutUs.about_us_image.alt}
+                  width={0}
+                  height={0}
+                  sizes="100vw"
+                  style={{ width: '100%', height: 'auto' }}
+                    />
                 </div>
               </div>
             </div>
@@ -178,11 +190,14 @@ export default function Home() {
                       <div className="slide-box relative">
                         {
                           <>
-                            <img
-                              src={image.home_silder_image.url}
-                              alt={image.home_silder_image.alt}
-                              className="block h-full w-full object-cover"
-                            />
+                          <Image 
+                            src={image.home_silder_image.url} 
+                            alt={image.home_silder_image.alt} 
+                            width={0}
+                            height={0}
+                            sizes="100vw"
+                            style={{ width: '100%', height: 'auto' }}
+                          />
                             <p className="">{image.home_slider_title}</p>
                           </>
                         }
@@ -266,9 +281,16 @@ export default function Home() {
             <div className="contact-map lg:w-1/2">
               <Link
                 target="_blank"
-                href={homeKontaktUs.home_kontakt_us_image.link}
+                href={homeKontaktUs.home_kontakt_us_map_link}
               >
-                <img src={homeKontaktUs.home_kontakt_us_image.url} alt={homeKontaktUs.home_kontakt_us_image.alt} />
+               <Image
+                  src={homeKontaktUs.home_kontakt_us_image.url}
+                  alt={homeKontaktUs.home_kontakt_us_image.alt}
+                  width={0}
+                  height={0}
+                  sizes="100vw"
+                  style={{ width: '100%', height: 'auto' }}
+                  />
               </Link>
             </div>
           </div>
