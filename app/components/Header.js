@@ -18,8 +18,10 @@ import Image from "next/image";
   const [Floating_Header_Menu, setFloating_Header_Menu] = useState(null);
   
   const BGHEADER = async() => {
-    const result = await axios.get(`${WORDPRESS_URL}/wp-json/custom/v1/page-acf-data?slug=${slug}`);
-    setBG_Header(result.data.header_logo_color)
+    if(slug != undefined){
+      const result = await axios.get(`${WORDPRESS_URL}/wp-json/custom/v1/page-acf-data?slug=${slug}`);
+      setBG_Header(result.data.header_logo_color)
+    }
   }
   const fetchHeader_menu = async () => {
     try {
