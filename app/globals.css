@@ -142,32 +142,34 @@ p {
   color: #FF7276;
 }
 
-.b-btn,
-.event-post.brunch-post .brunch-post-wrapper:nth-child(even) .brunch-post-content a.btn {
+.b-btn,.red-btn
+/* .event-post.brunch-post .brunch-post-wrapper:nth-child(even) .brunch-post-content a.btn  */
+{
   color: #FF7276;
   background: transparent;
   border: 1px solid #FF7276;
 }
 
-.b-btn:hover,
-.event-post.brunch-post .brunch-post-wrapper:nth-child(even) .brunch-post-content a.btn:hover {
+.b-btn:hover,.red-btn:hover
+/* .event-post.brunch-post .brunch-post-wrapper:nth-child(even) .brunch-post-content a.btn:hover  */
+{
   background: #FF7276;
   color: #fff;
 }
 
 .contact-btns .b-btn,
-.brunch-post .brunch-post-wrapper:nth-child(even) .brunch-post-content a.btn,
-.event-post.brunch-post .brunch-post-wrapper:nth-child(odd) .brunch-post-content a.btn,
-.dinner-post .brunch-post-wrapper .brunch-post-content a.btn,
+/* .brunch-post .brunch-post-wrapper:nth-child(even) .brunch-post-content a.btn, */
+/* .event-post.brunch-post .brunch-post-wrapper:nth-child(odd) .brunch-post-content a.btn, */
+.dinner-post .brunch-post-wrapper .brunch-post-content a.btn,.dark-btn,
 .s-header.sticky .b-btn {
   border-color: #393D47;
   color: #393D47;
 }
 
-.contact-btns .b-btn:hover,
-.brunch-post .brunch-post-wrapper:nth-child(even) .brunch-post-content a.btn:hover,
+.contact-btns .b-btn:hover,.dark-btn:hover,
+/* .brunch-post .brunch-post-wrapper:nth-child(even) .brunch-post-content a.btn:hover, */
 .dinner-post .brunch-post-wrapper .brunch-post-content a.btn:hover,
-.event-post.brunch-post .brunch-post-wrapper:nth-child(odd) .brunch-post-content a.btn:hover,
+/* .event-post.brunch-post .brunch-post-wrapper:nth-child(odd) .brunch-post-content a.btn:hover, */
 .s-header.sticky .b-btn:hover {
   background-color: #393D47;
   color: #fff;
