@@ -19,7 +19,17 @@ const Page = ({ params }) => {
 
   useEffect(() => {
     document.title = `${params.slug.charAt(0).toUpperCase() + params.slug.slice(1)} - koko & lores`;
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute("content", `${params.slug}`);
+    } else {
+      const meta = document.createElement('meta');
+      meta.name = "description";
+      meta.content = `${params.slug}`;
+      document.head.appendChild(meta);
+    }
   }, [params.slug]);
+
   
   useEffect(() => {
     const fetchData = async () => {
