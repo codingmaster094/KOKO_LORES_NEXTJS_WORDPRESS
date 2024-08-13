@@ -41,7 +41,7 @@ const Page = ({ params }) => {
           setPageContent(null);
         } else {
           setPageContent(initialContent);
-          setData(null);
+          setData(null);   
         }
         
         setContactData(contactData);
