@@ -38,7 +38,7 @@ import Image from "next/image";
       setFloating_Header_Menu(result.data[0].items);
     } catch (error) {
       console.error('Error fetching menu data', error);
-    }
+    } 
   };
 
   useEffect(() => {
