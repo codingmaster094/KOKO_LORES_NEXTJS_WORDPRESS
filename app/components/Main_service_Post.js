@@ -24,7 +24,7 @@ function Main_service_Post({ initialContent }) {
             <div
               className={`${items.services_post_lists_background_color_radio} 
               ${BGColorClass} brunch-post-wrapper flex flex-wrap items-stretch`}
-              key={items.id}
+              key={index}
           >
              <div className={`brunch-post-img w-full lg:w-1/2 ${imgPositionClass}`}>
                 <div className="sub-banner banner-slide-box h-full relative">

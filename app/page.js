@@ -79,7 +79,7 @@ export default function Home() {
   }
 
   return (
-    <>
+    
     <Layout>
         {homeHero && (
           <section className="hero-banner bg-color">
@@ -369,6 +369,6 @@ export default function Home() {
         </section>
         )}
     </Layout>
-    </>
+
   );
 }

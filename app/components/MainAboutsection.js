@@ -17,9 +17,7 @@ function MainAboutsection({ initialContent }) {
                         <div className="about-btns sm:mb-16 mb-10  flex items-center gap-4">
                         { content.service_about_us_buttons &&
                             content.service_about_us_buttons.map((Btn , i)=>(
-                                <>
                                 <Link href={Btn.service_about_us_buttons_links.url} className="rounded-full b-btn" key={i}>{Btn.service_about_us_buttons_links.title}</Link>
-                                </>
                             ))
                         }   
                         </div>
