@@ -26,7 +26,7 @@ const Page = ({ params }) => {
       const meta = document.createElement('meta');
       meta.name = "description";
       meta.content = `${params.slug}`;
-      document.head.appendChild(meta);
+      document.head.appendChild(meta); 
     }
   }, [params.slug]);
 

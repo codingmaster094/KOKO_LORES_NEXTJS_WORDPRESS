@@ -69,13 +69,14 @@ export default function Home() {
     }
   }
 
+
   useEffect(() => {
     fetchHomeHero();
     conatctDetail()
   }, []); 
 
   if (!homeHero && !homeAboutUs  && !homeSlider && !homeKontaktUs && !homeNewsletter) {
-    return <Loader/>;
+    return <Loader/>;            
   }
 
   return (
@@ -369,6 +370,5 @@ export default function Home() {
         </section>
         )}
     </Layout>
-
   );
 }
