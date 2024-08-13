@@ -32,15 +32,19 @@ export default function Home() {
       const heroSection = home_pages_flexible_content.find(
         (section) => section.acf_fc_layout === "home_hero_section"
       );
+
       const aboutUsSection = home_pages_flexible_content.find(
         (section) => section.acf_fc_layout === "home_about_us_section"
       );
+
       const sliderSection = home_pages_flexible_content.find(
         (section) => section.acf_fc_layout === "home_slider"
       );
+
       const kontaktUsSection = home_pages_flexible_content.find(
         (section) => section.acf_fc_layout === "home_kontakt_us_section"
       );
+      
       const newsletterSection = home_pages_flexible_content.find(
         (section) => section.acf_fc_layout === "home_newsletter"
       );

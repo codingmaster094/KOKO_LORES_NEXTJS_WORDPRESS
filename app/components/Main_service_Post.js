@@ -4,7 +4,6 @@ import React from "react";
 
 function Main_service_Post({ initialContent }) {
   const content = initialContent;
-  console.log('content', content)
   return (
     <section className="brunch-post event-post">
       {content?.service_post_lists_repeater?.length > 0 &&
@@ -17,16 +16,15 @@ function Main_service_Post({ initialContent }) {
           ? 'dark-btn' 
           : 'red-btn'
 
-              // Determine position classes
         const isEven = index % 2 === 0;
         const imgPositionClass = isEven ? "order-1 lg:order-1" : "order-2";
         const contentPositionClass = isEven ? "order-2 lg:order-2" : "order-1";
 
           return (
             <div
-            className={`${items.services_post_lists_background_color_radio} 
+              className={`${items.services_post_lists_background_color_radio} 
               ${BGColorClass} brunch-post-wrapper flex flex-wrap items-stretch`}
-            key={items.id} // Assuming each item has a unique id
+              key={items.id}
           >
              <div className={`brunch-post-img w-full lg:w-1/2 ${imgPositionClass}`}>
                 <div className="sub-banner banner-slide-box h-full relative">

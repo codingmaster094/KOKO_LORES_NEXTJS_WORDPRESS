@@ -39,7 +39,7 @@ function Footer() {
         <div className="f-wrapper flex flex-wrap items-start lg:gap-0 gap-0 sm:gap-y-6 gap-y-10 lg:gap-y-0 ">
           <div className="f-wd w-full order-last lg:order-first lg:w-1/4">
             <div className="logo">
-            <Link href="/">
+            <Link href="/" aria-label="Home">
             {
               Footer_menu && 
               <Image

@@ -18,8 +18,10 @@ import Image from "next/image";
   const [Floating_Header_Menu, setFloating_Header_Menu] = useState(null);
   
   const BGHEADER = async() => {
-    const result = await axios.get(`${WORDPRESS_URL}/wp-json/custom/v1/page-acf-data?slug=${slug}`);
-    setBG_Header(result.data.header_logo_color)
+    if(slug != undefined){
+      const result = await axios.get(`${WORDPRESS_URL}/wp-json/custom/v1/page-acf-data?slug=${slug}`);
+      setBG_Header(result.data.header_logo_color)
+    }
   }
   const fetchHeader_menu = async () => {
     try {
@@ -86,7 +88,7 @@ import Image from "next/image";
             </div>
             {Header_menu && (
             <div className="social-icon flex items-center gap-6">
-            <Link href={Header_menu.facebook_link.url} target={Header_menu.facebook_link.target}>
+            <Link href={Header_menu.facebook_link.url} target={Header_menu.facebook_link.target} aria-label="Facebook">
               <svg
                   width="21"
                   height="22"
@@ -100,7 +102,7 @@ import Image from "next/image";
                   />
                 </svg>
               </Link>
-              <Link href={Header_menu.instagram_link.url} target={Header_menu.instagram_link.target}>
+              <Link href={Header_menu.instagram_link.url} target={Header_menu.instagram_link.target} aria-label="Instagram">
               <svg
                     width="21"
                     height="22"
@@ -135,7 +137,7 @@ import Image from "next/image";
               </div>
               {Header_menu && (
               <div className="social-icon flex items-center gap-6">
-              <Link href={Header_menu.facebook_link.url} target={Header_menu.target}>
+              <Link href={Header_menu.facebook_link.url} target={Header_menu.target} aria-label="Facebook">
               <svg
                   width="21"
                   height="22"
@@ -149,7 +151,7 @@ import Image from "next/image";
                   />
                 </svg>
               </Link>
-              <Link href={Header_menu.instagram_link.url} target={Header_menu.target}>
+              <Link href={Header_menu.instagram_link.url} target={Header_menu.target} aria-label="Instagram">
                 <svg
                     width="21"
                     height="22"
