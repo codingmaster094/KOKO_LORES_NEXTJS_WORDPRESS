@@ -69,7 +69,6 @@ export default function Home() {
     }
   }
 
-
   useEffect(() => {
     fetchHomeHero();
     conatctDetail()
@@ -115,20 +114,22 @@ export default function Home() {
                 </div>
                 {homeHero.home_hero_section_images.map((image, index) => {
                   return (
+                    <Link href={image.home_hero_section_images_title.url}>
                     <div
                       className="banner-slide-box relative w-full"
                       key={index}
                     >
                      <Image
-                       src={image.home_hero_section_image.url}
+                      src={image.home_hero_section_image.url}
                       alt={image.home_hero_section_image.alt}
                       width={0}
                       height={0}
                       sizes="100vw"
                       style={{ width: '100%', height: 'auto' }}
                     />
-                      <p>{image.home_hero_section_images_title}</p>
+                      <p>{image.home_hero_section_images_title.title}</p>
                     </div>
+                    </Link>
                   );
                 })}
               </div>

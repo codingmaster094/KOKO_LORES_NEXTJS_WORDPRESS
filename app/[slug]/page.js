@@ -69,6 +69,7 @@ const Page = ({ params }) => {
 
   return (
     <Layout>
+    
       {data ? (
         <>
           {heroSectionData && <MainHerosection initialContent={heroSectionData} />}
