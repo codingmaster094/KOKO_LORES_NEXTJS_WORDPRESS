@@ -65,7 +65,8 @@ import Image from "next/image";
     BGHEADER()
     fetchHeader_menu();
     fetchFloating_Header_Menu();
-  }, []);
+  }, [])
+  
 
   return (
     <header ref={headerRef} className={`${BG_Header == "dark" ? 's-header' : ''} ${sticky ? "sticky" : ""}`}>
